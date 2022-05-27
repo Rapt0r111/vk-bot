@@ -72,7 +72,7 @@ def answer_message(message_id, peer_id, text='', stick=False, attachment='', tim
 
 def a_time():
     while True:
-        if int(datetime.datetime.now().hour) == 21 and int(datetime.datetime.now().minute) == 13 and int(
+        if int(datetime.datetime.now().hour) == 21 and int(datetime.datetime.now().minute) == 00 and int(
                 datetime.datetime.now().second) == 0:
             vk.messages.send(peer_id=2000000003, message="""
 ХОХЛЫ РАВНЯЙСЬ
@@ -236,7 +236,7 @@ def main():
                         elif ' бот ' in message:
                             answer_message(peer_id=peer_id, message_id=message_id,
                                            text='А ты кожаный ублюдок. И вообще иди нахуй.', stick=False)
-                        elif '!кто' in message:
+                        elif '!кто' in message or '!кого':
                             answer_message(peer_id=peer_id, message_id=message_id,
                                            text=who_question(), stick=False)
                         # elif '!авито' in message:
