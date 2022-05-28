@@ -217,7 +217,7 @@ def main():
                                            times=check_number(message))
                         elif 'иди нахуй' in message or 'пошёл нах' in message or 'пошел нах' in message or 'или нах' in message:
                             answer_message(message_id=message_id, peer_id=peer_id, text="Сам иди нахуй :(", stick=False)
-                        elif 'фамилия' in message and 'ян' in message:
+                        elif 'фамилия ' in message and 'ян' in message:
                             answer_message(message_id=message_id, peer_id=peer_id, text="Чухалёнов", stick=False)
                         elif '!факт' in message:
                             vk.messages.send(peer_id=peer_id, message=rnd_fact(url='https://randstuff.ru/fact/'),
@@ -236,7 +236,7 @@ def main():
                         elif ' бот ' in message:
                             answer_message(peer_id=peer_id, message_id=message_id,
                                            text='А ты кожаный ублюдок. И вообще иди нахуй.', stick=False)
-                        elif '!кто' in message or '!кого':
+                        elif '!кто' in message or '!кого' in message:
                             answer_message(peer_id=peer_id, message_id=message_id,
                                            text=who_question(), stick=False)
                         # elif '!авито' in message:
