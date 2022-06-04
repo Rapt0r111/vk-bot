@@ -12,6 +12,7 @@ from bs4 import BeautifulSoup
 from vk_api.bot_longpoll import VkBotEventType, VkBotLongPoll
 
 import config, parser
+from weather import weather
 
 vk_session = vk_api.VkApi(token=config.token)
 vk = vk_session.get_api()
@@ -239,6 +240,9 @@ def main():
                         elif '!кто' in message or '!кого' in message:
                             answer_message(peer_id=peer_id, message_id=message_id,
                                            text=who_question(), stick=False)
+                        elif '!погода' in message:
+                            answer_message(peer_id=peer_id, message_id=message_id,
+                                           text=weather(str('погода Калининград'+message[7:])), stick=False)
                         # elif '!авито' in message:
                         #     x=parser.par()
                         #     print(x)
