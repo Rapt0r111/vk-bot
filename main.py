@@ -73,28 +73,6 @@ def answer_message(message_id, peer_id, text='', stick=False, attachment='', tim
 
 def a_time():
     while True:
-        if int(datetime.datetime.now().hour) == 21 and int(datetime.datetime.now().minute) == 00 and int(
-                datetime.datetime.now().second) == 0:
-            vk.messages.send(peer_id=2000000003, message="""
-ХОХЛЫ РАВНЯЙСЬ
-
-🐷🐖🐷🐖🐖🐷
-👕👕👕👕👕👕
-👖👖👖👖👖👖
-
-ОТСТАВИТЬ
-
-РАВНЯЙСЬ
-
-🐷🐖🐖🐖🐖🐖
-👕👕👕👕👕👕
-👖👖👖👖👖👖
-
-СМИРНО
-🐷🐷🐷🐷🐷🐷
-👕👕👕👕👕👕
-👖👖👖👖👖👖   """, random_id=get_random_id())
-            time.sleep(1)
         if int(datetime.datetime.now().hour) == 5 and int(datetime.datetime.now().minute) == 0 and int(
                 datetime.datetime.now().second) == 0:
             vk.messages.send(peer_id=2000000003, message=
@@ -248,8 +226,8 @@ def main():
                         elif '!завтра' in message:
                             answer_message(peer_id=peer_id, message_id=message_id,
                                            text=weather(str('погода Калининград завтра'+message[7:])), stick=False)
-                            answer_message(peer_id=peer_id, message_id=message_id,
-                                           text=weather_tomorrow(), stick=False)
+                            vk.messages.send(peer_id=peer_id, message=weather_tomorrow(),
+                                             random_id=get_random_id())
                         # elif '!авито' in message:
                         #     x=parser.par()
                         #     print(x)
