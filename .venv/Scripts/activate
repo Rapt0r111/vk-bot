@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\Rapt0r\Desktop\New folder\New folder (3)\vk-bot-312\.venv"
+VIRTUAL_ENV="C:\Users\rapto\OneDrive\Desktop\New folder\New folder (3)\vk-bot-312\.venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

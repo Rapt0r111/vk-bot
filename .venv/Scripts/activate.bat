@@ -8,7 +8,7 @@ if defined _OLD_CODEPAGE (
     "%SystemRoot%\System32\chcp.com" 65001 > nul
 )
 
-set VIRTUAL_ENV=C:\Users\Rapt0r\Desktop\New folder\New folder (3)\vk-bot-312\.venv
+set VIRTUAL_ENV=C:\Users\rapto\OneDrive\Desktop\New folder\New folder (3)\vk-bot-312\.venv
 
 if not defined PROMPT set PROMPT=$P$G
 
