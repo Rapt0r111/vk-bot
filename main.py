@@ -229,6 +229,10 @@ def main():
                                            text=weather(str('погода Калининград завтра'+message[7:])), stick=False)
                             vk.messages.send(peer_id=peer_id, message=weather_tomorrow(),
                                              random_id=get_random_id())
+                        elif '!расп' in message:
+                            answer_message(peer_id=peer_id, message_id=message_id,
+                                           text="http://online.i-klgtu.ru/fulltime/current/10/20-%D0%98%D0%91.html", stick=False)
+
                         # elif '!авито' in message:
                         #     x=parser.par()
                         #     print(x)
