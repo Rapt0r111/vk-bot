@@ -231,7 +231,7 @@ def main():
                                              random_id=get_random_id())
                         elif '!расп' in message:
                             answer_message(peer_id=peer_id, message_id=message_id,
-                                           text="http://online.i-klgtu.ru/fulltime/current/10/20-%D0%98%D0%91.html", stick=False)
+                                           text="http://online.i-klgtu.ru/fulltime/current/10/20-ИБ(оиб).html", stick=False)
 
                         # elif '!авито' in message:
                         #     x=parser.par()
