@@ -36,7 +36,9 @@ def rasp_today(plus_day: int, group: int):
         if cellObj[1].value:
             txt = ''
             for cell in cellObj:
-                if cell.value:
+                if cell.value and 'D' not in cell.coordinate:
                     txt += str(cell.value) + ' '
+                elif cell.value:
+                    txt += f'\nКабинет {str(cell.value)} '
             array_messages.append(txt)
     return array_messages if array_messages else ['Выходной, пар нет, спим']

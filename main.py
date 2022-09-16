@@ -230,6 +230,14 @@ def main():
                             for i in rasp.rasp_today(plus_day=0, group=2):
                                 vk.messages.send(peer_id=peer_id, message=i,
                                                  random_id=get_random_id())
+                        elif '!1з' in message:
+                            for i in rasp.rasp_today(plus_day=1, group=1):
+                                vk.messages.send(peer_id=peer_id, message=i,
+                                                 random_id=get_random_id())
+                        elif '!2з' in message:
+                            for i in rasp.rasp_today(plus_day=1, group=2):
+                                vk.messages.send(peer_id=peer_id, message=i,
+                                                 random_id=get_random_id())
                         # elif '!авито' in message:
                         #     x=parser.par()
                         #     print(x)
