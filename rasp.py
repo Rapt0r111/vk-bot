@@ -39,4 +39,4 @@ def rasp_today(plus_day: int, group: int):
                 if cell.value:
                     txt += str(cell.value) + ' '
             array_messages.append(txt)
-    return array_messages if array_messages else ['Ниче нет, спим']
+    return array_messages if array_messages else ['Выходной, пар нет, спим']
