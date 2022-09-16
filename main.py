@@ -2,6 +2,7 @@ import datetime
 import json
 import random
 import time
+import rasp
 from threading import Thread
 
 import numpy as np
@@ -73,28 +74,17 @@ def answer_message(message_id, peer_id, text='', stick=False, attachment='', tim
 
 def a_time():
     while True:
-        if int(datetime.datetime.now().hour) == 5 and int(datetime.datetime.now().minute) == 0 and int(
+        if int(datetime.datetime.now().hour) == 19 and int(datetime.datetime.now().minute) == 0 and int(
                 datetime.datetime.now().second) == 0:
-            vk.messages.send(peer_id=2000000003, message=
-"""
-ХОХЛЫ РАВНЯЙСЬ
-
-🐷🐖🐷🐖🐖🐷
-👕👕👕👕👕👕
-👖👖👖👖👖👖
-
-ОТСТАВИТЬ
-
-РАВНЯЙСЬ
-
-🐷🐖🐖🐖🐖🐖
-👕👕👕👕👕👕
-👖👖👖👖👖👖
-
-СМИРНО
-🐷🐷🐷🐷🐷🐷
-👕👕👕👕👕👕
-👖👖👖👖👖👖   """, random_id=get_random_id())
+            for i in rasp.rasp_today(plus_day=1, group=1):
+                vk.messages.send(peer_id=2000000003, message=i,
+                                 random_id=get_random_id())
+            time.sleep(1)
+        elif int(datetime.datetime.now().hour) == 5 and int(datetime.datetime.now().minute) == 0 and int(
+                datetime.datetime.now().second) == 0:
+            for i in rasp.rasp_today(plus_day=0, group=1):
+                vk.messages.send(peer_id=2000000003, message=i,
+                                 random_id=get_random_id())
             time.sleep(1)
         time.sleep(0.33)
 
@@ -232,7 +222,14 @@ def main():
                         elif '!расп' in message:
                             answer_message(peer_id=peer_id, message_id=message_id,
                                            text="https://online.i-klgtu.ru/fulltime/new/10/20-ИБ(оиб).html", stick=False)
-
+                        elif '!1' in message:
+                            for i in rasp.rasp_today(plus_day=0, group=1):
+                                vk.messages.send(peer_id=peer_id, message=i,
+                                                 random_id=get_random_id())
+                        elif '!2' in message:
+                            for i in rasp.rasp_today(plus_day=0, group=2):
+                                vk.messages.send(peer_id=peer_id, message=i,
+                                                 random_id=get_random_id())
                         # elif '!авито' in message:
                         #     x=parser.par()
                         #     print(x)
@@ -251,7 +248,7 @@ def input_cmd():
 
 
 if __name__ == '__main__':
-    t1 = Thread(target=a_time, args=(), daemon=True)
+    t1 = Thread(target=a_time, args=())
     print(datetime.datetime.now())
     t2 = Thread(target=main, args=())
     t3 = Thread(target=input_cmd, args=())
