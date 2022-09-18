@@ -1,3 +1,4 @@
+import datetime
 from datetime import date
 import calendar
 
@@ -7,11 +8,12 @@ from openpyxl import load_workbook
 # day_of_week = 'Friday'
 
 def rasp_today(plus_day: int, group: int):
+
     array_messages = []
     wb = load_workbook('./Raspsianie.xlsx') if group == 1 else load_workbook('./Raspsianie1.xlsx')
     sheet = wb["Лист1"]
-    day_of_week = calendar.day_name[date.today().weekday() + plus_day]
-    if date.today().isocalendar().week % 2:
+    day_of_week = calendar.day_name[(date.today() + datetime.timedelta(days=plus_day)).weekday()]
+    if (date.today() + datetime.timedelta(days=plus_day)).isocalendar().week % 2:
         week = {
             'Monday': ['B2', 'D7'],
             'Tuesday': ['B8', 'D13'],
