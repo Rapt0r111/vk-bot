@@ -222,11 +222,11 @@ def main():
                         elif '!расп' in message:
                             answer_message(peer_id=peer_id, message_id=message_id,
                                            text="https://online.i-klgtu.ru/fulltime/new/10/20-ИБ(оиб).html", stick=False)
-                        elif '!1з' in message:
+                        elif '!з1' in message:
                             for i in rasp.rasp_today(plus_day=1, group=1):
                                 vk.messages.send(peer_id=peer_id, message=i,
                                                  random_id=get_random_id())
-                        elif '!2з' in message:
+                        elif '!з2' in message:
                             for i in rasp.rasp_today(plus_day=1, group=2):
                                 vk.messages.send(peer_id=peer_id, message=i,
                                                  random_id=get_random_id())
