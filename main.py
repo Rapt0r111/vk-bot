@@ -245,7 +245,7 @@ def main():
                         #         vk.messages.send(peer_id=peer_id, random_id=get_random_id(),
                         #                message=i)
 
-        except Exception as e:
+        except Exception as e: 
             print(e)
 
 def input_cmd():
